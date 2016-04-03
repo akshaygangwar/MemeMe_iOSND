@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXZ-pz-r0e">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <rect key="frame" x="-4" y="623" width="383" height="44"/>
                                 <items>
                                     <barButtonItem title="Album" id="ONp-XU-su3">
                                         <connections>
@@ -35,10 +35,10 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dl3-ty-0Fn">
-                                <rect key="frame" x="28" y="153" width="359" height="430"/>
+                                <rect key="frame" x="24" y="64" width="328" height="559"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWP-u5-gAY">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="-4" y="20" width="383" height="44"/>
                                 <items>
                                     <navigationItem title="MemeMe 1.0" id="bMw-gS-I78">
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="Hfg-0T-svT">
@@ -50,7 +50,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-1E-Vd2">
-                                <rect key="frame" x="38" y="173" width="338" height="30"/>
+                                <rect key="frame" x="19" y="82" width="338" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="CyR-uu-g2j"/>
                                     <constraint firstAttribute="height" constant="30" id="OcN-UK-qI8"/>
@@ -60,7 +60,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Rf9-XU-9e2">
-                                <rect key="frame" x="38" y="536" width="338" height="30"/>
+                                <rect key="frame" x="19" y="565" width="338" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YOc-b6-jv5"/>
                                     <constraint firstAttribute="width" constant="338" id="xz9-Cw-qOT"/>
@@ -71,23 +71,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dl3-ty-0Fn" secondAttribute="bottom" constant="153" id="1dL-VN-OKe"/>
                             <constraint firstItem="vWP-u5-gAY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="5v9-Um-LEZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dl3-ty-0Fn" secondAttribute="bottom" constant="44" id="CuD-yu-bC4"/>
                             <constraint firstItem="dl3-ty-0Fn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="DW5-GU-xSM"/>
-                            <constraint firstItem="dl3-ty-0Fn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="133" id="LQI-FY-BYR"/>
-                            <constraint firstItem="S3V-1E-Vd2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="153" id="T9g-Aq-as1"/>
-                            <constraint firstItem="Rf9-XU-9e2" firstAttribute="top" secondItem="dl3-ty-0Fn" secondAttribute="bottom" constant="-47" id="Thz-fS-BCS"/>
+                            <constraint firstItem="S3V-1E-Vd2" firstAttribute="top" secondItem="vWP-u5-gAY" secondAttribute="bottom" constant="18" id="GyP-DW-2ZP"/>
+                            <constraint firstItem="dl3-ty-0Fn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="LQI-FY-BYR"/>
                             <constraint firstItem="lXZ-pz-r0e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Wwh-7D-ziV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lXZ-pz-r0e" secondAttribute="bottom" id="a0E-Ku-0bt"/>
                             <constraint firstItem="S3V-1E-Vd2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bLO-gg-QE3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vWP-u5-gAY" secondAttribute="trailing" constant="-20" id="gKV-KM-CNq"/>
                             <constraint firstItem="vWP-u5-gAY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="isv-OD-b0p"/>
+                            <constraint firstItem="lXZ-pz-r0e" firstAttribute="top" secondItem="Rf9-XU-9e2" secondAttribute="bottom" constant="28" id="jTa-f0-H4f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lXZ-pz-r0e" secondAttribute="trailing" constant="-20" id="nGd-y5-ulv"/>
                             <constraint firstItem="dl3-ty-0Fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xsZ-i0-Q8B"/>
                             <constraint firstItem="Rf9-XU-9e2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z9b-iN-Ygu"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bottomTextField" destination="Rf9-XU-9e2" id="Irq-c2-ctV"/>
                         <outlet property="bottomToolBar" destination="lXZ-pz-r0e" id="l66-bs-GQZ"/>
@@ -100,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="349"/>
+            <point key="canvasLocation" x="304.5" y="348.5"/>
         </scene>
     </scenes>
 </document>

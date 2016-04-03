@@ -63,19 +63,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.delegate = self
-        bottomTextField.delegate = self
-        topTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.textAlignment = NSTextAlignment.Center
-        topTextField.adjustsFontSizeToFitWidth = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
-        view.addGestureRecognizer(tapGesture)
-        if (imagePicker.image == nil){
-            shareMeme.enabled = false
-        }
-        // Do any additional setup after loading the view, typically from a nib.
+        //perform initial app setup
+        doInitialSetup()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,6 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.unsubscribeToKeyboardNotifications()
     }
     
+    //dismiss keyboard when the user taps outside the text box, for a better UX than having to press Return.
     func tap(gesture: UITapGestureRecognizer) {
         topTextField.resignFirstResponder()
         bottomTextField.resignFirstResponder()
@@ -128,9 +118,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        print("Keyboard will show called")
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
-        //self.bottomTextField.frame.origin.y -= getKeyboardHeight(notification)
+        if(bottomTextField.isFirstResponder()) {
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+        //self.view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -140,8 +131,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        print("Keyboard will hide called")
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        if(bottomTextField.isFirstResponder()) {
+            self.view.frame.origin.y += getKeyboardHeight(notification)
+        }
+        //self.view.frame.origin.y += getKeyboardHeight(notification)
     }
     
     func subscribeToKeyboardNotifications() {
@@ -152,6 +145,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func unsubscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object:nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    //MARK: Initial App Setup Functions
+    
+    func initialiseTextFields() {
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.delegate = self
+        bottomTextField.delegate = self
+        topTextField.textAlignment = NSTextAlignment.Center
+        bottomTextField.textAlignment = NSTextAlignment.Center
+        topTextField.adjustsFontSizeToFitWidth = true
+    }
+    
+    func assignShareButtonState() {
+        if (imagePicker.image == nil) {
+            shareMeme.enabled = false
+        }
+    }
+    
+    func setTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func doInitialSetup() {
+        initialiseTextFields()
+        assignShareButtonState()
+        setTapGesture()
     }
 
 }
